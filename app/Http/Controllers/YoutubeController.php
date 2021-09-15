@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\File;
-
+use  alchemyguy\YoutubeLaravelApi\AuthenticateService;
 
 class YoutubeController extends Controller
 {
+    const API_KEY = 'AIzaSyDaOgFPQmo6b8LaUxeDBX4dO5UJHcZXMn0';
 
     public function index()
     {
@@ -82,5 +84,41 @@ class YoutubeController extends Controller
 
         return view('youtube.channel.subscribers');
     }
+    public function videoData(){
+        $data=[];
+        return view('youtube.channel.video-data', compact('data'));
+    }
 
+
+    public function getYoutubeVideoID(Request $request){
+        $part = 'snippet';
+        $url = $request->url;
+        $queryString = parse_url($url,PHP_URL_QUERY);
+        parse_str($queryString,$params);
+        if(isset($params['v']) && strlen($params['v'])>0){
+            $video_id = $params['v'];
+            $apiKey = config('services.youtube.api_key');
+            $videos_endpoint =  "https://www.googleapis.com/youtube/v3/videos?part=$part%2CcontentDetails%2Cstatistics&id=$video_id&key=$apiKey";
+            $data = json_decode(file_get_contents($videos_endpoint));
+            return view('youtube.channel.video-data', compact('data'));
+
+        }else{
+            return "Wrong youtube video url";
+        }
+    }
+
+    function getChannels(){
+        return view('youtube.channel.auth-data');
+
+    }
+    public function alaouy(){
+        $data=[];
+        return view('youtube.channel.alaouy-package', compact('data'));
+    }
+    public function getChannelById(Request $request){
+
+        $data =(array) Youtube::getChannelById($request->channel_id);
+
+        return view('youtube.channel.alaouy-package', compact('data'));
+    }
 }

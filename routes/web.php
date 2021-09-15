@@ -23,5 +23,18 @@ Route::prefix('youtube')->group(function (){
     Route::get('/watch/{id}', 'YoutubeController@watch')->name('youtube.watch');
     Route::get('/channel', 'YoutubeController@channel')->name('youtube.channel');
     Route::get('/channel-subscribers', 'YoutubeController@subscribers')->name('youtube.subscribers');
+    Route::get('/video-data', 'YoutubeController@videoData')->name('youtube.videoData');
+    Route::post('/get-video-data', 'YoutubeController@getYoutubeVideoID')->name('youtube.getYoutubeVideoID');
+    Route::get('/get-channel', 'YoutubeController@getChannels')->name('youtube.getChannels');
+    //  Route::get('/get-channel-by-name', 'YoutubeController@getChannelByName');
+    Route::get('/getChannelById', 'YoutubeController@alaouy')->name('youtube.package');
+    Route::post('/alaouy-package', 'YoutubeController@getChannelById')->name('youtube.alaouySubmit');
 });
 
+Route::prefix('tiktok')->group(function (){
+    Route::get('/', 'TiktokController@index')->name('tiktok.index');
+});
+
+//CRM
+Route::get('/crm', 'CrmController@index');
+Route::get('/redis', 'RedisController@index');
