@@ -27,7 +27,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ route('youtube.index') }}">Search</a>
-                        <a class="dropdown-item" href="{{route('youtube.channel')}}">Channel Data</a>
+{{--                        <a class="dropdown-item" href="{{route('youtube.channel')}}">Channel Data</a>--}}
                         <a class="dropdown-item" href="{{route('youtube.subscribers')}}">subscribers</a>
                         <a class="dropdown-item" href="{{route('youtube.videoData')}}">Video Data</a>
                         <a class="dropdown-item" href="{{route('youtube.package')}}">alaouy-package</a>
@@ -35,6 +35,21 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('tiktok.index')}}">tiktok</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Twitter
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{route('fb')}}">TweetDetail</a>
+                        <a class="dropdown-item" href="{{route('fb.userInfo')}}">User Info</a>
+{{--                        <a class="dropdown-item" href="{{route('fb.userTweets')}}">User Tweets</a>--}}
+{{--                        <a class="dropdown-item" href="{{route('youtube.videoData')}}">Video Data</a>--}}
+{{--                        <a class="dropdown-item" href="{{route('youtube.package')}}">alaouy-package</a>--}}
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('fb')}}">Facebook</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>

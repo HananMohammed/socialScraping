@@ -11,14 +11,14 @@
             </ul>
             <div id="content">
                 <div class="row">
-                    <div class="col s6">
-                        <form id="channel-form">
-                            <div class="input-field col s6">
-                                <input type="text" placeholder="Enter Channel Name  " id="channel-input">
-                                <input type="submit" value="Get Channel Data" class="btn grey" id="channel-input-btn">
-                            </div>
-                        </form>
-                    </div>
+{{--                    <div class="col s6">--}}
+{{--                        <form id="channel-form">--}}
+{{--                            <div class="input-field col s6">--}}
+{{--                                <input type="text" placeholder="Enter Channel Name  " id="channel-input">--}}
+{{--                                <input type="submit" value="Get Channel Data" class="btn grey" id="channel-input-btn">--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
                     <div class="col s6">
                         <form id="channel-form">
                             <div class="input-field col s6">

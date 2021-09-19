@@ -17,6 +17,7 @@
                             </div>
                         </form>
                         @if(!empty($data))
+
                           <table>
                             <tr>
                                 <td>
@@ -37,15 +38,15 @@
                             </tr>
                             <tr>
                                 <td>viewCount</td>
-                                <td> {{$data['statistics']->viewCount}}</td>
+                                <td> {{(isset($data['statistics']->viewCount)) ? $data['statistics']->viewCount : ''}}</td>
                             </tr>
                             <tr>
                                 <td>subscriberCount</td>
-                                <td>{{$data['statistics']->subscriberCount}} </td>
+                                <td>{{(isset($data['statistics']->subscriberCount)) ? $data['statistics']->subscriberCount : ''}} </td>
                             </tr>
                             <tr>
                                 <td>videoCount</td>
-                                <td>{{$data['statistics']->videoCount}}</td>
+                                <td>{{(isset($data['statistics']->videoCount) )?$data['statistics']->videoCount : ''}}</td>
                             </tr>
 {{--                            <tr>--}}
 {{--                                <td>Dislike</td>--}}

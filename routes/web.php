@@ -26,7 +26,7 @@ Route::prefix('youtube')->group(function (){
     Route::get('/video-data', 'YoutubeController@videoData')->name('youtube.videoData');
     Route::post('/get-video-data', 'YoutubeController@getYoutubeVideoID')->name('youtube.getYoutubeVideoID');
     Route::get('/get-channel', 'YoutubeController@getChannels')->name('youtube.getChannels');
-    //  Route::get('/get-channel-by-name', 'YoutubeController@getChannelByName');
+    Route::get('/get-channel-by-name', 'YoutubeController@getChannelByName');
     Route::get('/getChannelById', 'YoutubeController@alaouy')->name('youtube.package');
     Route::post('/alaouy-package', 'YoutubeController@getChannelById')->name('youtube.alaouySubmit');
 });
@@ -38,3 +38,9 @@ Route::prefix('tiktok')->group(function (){
 //CRM
 Route::get('/crm', 'CrmController@index');
 Route::get('/redis', 'RedisController@index');
+Route::get('/fb', 'TwitterController@test')->name('fb');
+Route::get('/fb/store', 'TwitterController@store')->name('fb.store');
+Route::get('/fb/userInfo', 'TwitterController@userInfoView')->name('fb.userInfo');
+Route::get('/fb/userInfo/store', 'TwitterController@userInfoStore')->name('fb.userInfo.store');
+Route::get('/fb/userTweet', 'TwitterController@userTweets')->name('fb.userTweets');
+Route::get('/fb/userTweet/store', 'TwitterController@userTweetStore')->name('fb.userTweets.store');
