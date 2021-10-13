@@ -38,9 +38,12 @@ Route::prefix('tiktok')->group(function (){
 //CRM
 Route::get('/crm', 'CrmController@index');
 Route::get('/redis', 'RedisController@index');
+//FaceBook
 Route::get('/fb', 'TwitterController@test')->name('fb');
 Route::get('/fb/store', 'TwitterController@store')->name('fb.store');
 Route::get('/fb/userInfo', 'TwitterController@userInfoView')->name('fb.userInfo');
 Route::get('/fb/userInfo/store', 'TwitterController@userInfoStore')->name('fb.userInfo.store');
 Route::get('/fb/userTweet', 'TwitterController@userTweets')->name('fb.userTweets');
 Route::get('/fb/userTweet/store', 'TwitterController@userTweetStore')->name('fb.userTweets.store');
+//Telegram
+Route::get('/telegram', 'TelegramController@index')->name('telegram');

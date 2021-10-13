@@ -43,9 +43,15 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{route('fb')}}">TweetDetail</a>
                         <a class="dropdown-item" href="{{route('fb.userInfo')}}">User Info</a>
-{{--                        <a class="dropdown-item" href="{{route('fb.userTweets')}}">User Tweets</a>--}}
-{{--                        <a class="dropdown-item" href="{{route('youtube.videoData')}}">Video Data</a>--}}
-{{--                        <a class="dropdown-item" href="{{route('youtube.package')}}">alaouy-package</a>--}}
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Telegram
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{route('telegram')}}">Telegram</a>
+
                     </div>
                 </li>
                 <li class="nav-item">
